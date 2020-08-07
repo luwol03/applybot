@@ -15,5 +15,5 @@ sentry-sdk = "*"
 flake8 = "*"
 
 [scripts]
-bot = "python bot.py"
+bot = "python applybot.py"
 flake8 = "flake8 . --count --max-line-length=120 --statistics --show-source"
