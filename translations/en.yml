@@ -1,0 +1,58 @@
+not_allowed: You are not allowed to use this command.
+
+# ping
+pong: Pong!
+pong_latency: Pong ({:.0f} ms)
+
+# prefix
+invalid_prefix_length: Length of prefix must be between 1 and 16
+prefix_invalid_chars: Prefix contains invalid characters.
+prefix_updated: Prefix has been updated.
+log_prefix_updated: Bot prefix has been changed to `{}`
+
+# info
+bot_description: Python Discord Bot Template
+features:
+  - Foo
+  - Bar
+admin_features:
+  - Baz
+features_title: Features
+author_title: Author
+contributors_title: Contributors
+github_title: GitHub
+version_title: Version
+prefix_title: Prefix
+help_command_title: Help Command
+bugs_features_title: Bug Reports / Feature Requests
+bugs_features: >
+  Please [create an issue]({}/issues/new) in the GitHub repository
+  or contact me (<@370876111992913922>) via Discord.
+
+# help
+cog_or_command_not_found: This cog or command does not exist.
+description: Description
+subcommands: Subcommands
+no_category: No category
+help: Help
+help_usage: |
+  Type `{0}help <command>` for more info on a command.
+  Type `{0}help <cog>` for more info on a cog.
+
+# permissions
+permission_levels:
+  - Public
+  - Moderator
+  - Administrator
+no_permissions: No priviliges granted.
+invalid_permission_level: Invalid permission level.
+invalid_permission: Invalid permission.
+permission_set: Permission `{}` has been granted to `>= {}`
+permissions_title: Permissions
+my_permissions_title: My Permissions
+
+permissions:
+  change_prefix: change bot prefix
+  admininfo: view admininfo
+  view_own_permissions: view own permissions
+  view_all_permissions: view all permissions

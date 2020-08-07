@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[requires]
+python_version = "3.8"
+
+[packages]
+pydrocsid = "*"
+sentry-sdk = "*"
+"discord.py" = {git = "https://github.com/Rapptz/discord.py.git"}
+
+[dev-packages]
+flake8 = "*"
+
+[scripts]
+bot = "python bot.py"
+flake8 = "flake8 . --count --max-line-length=120 --statistics --show-source"

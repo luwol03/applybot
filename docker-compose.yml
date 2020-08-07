@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  discordbot:
+    container_name: discordbot
+    image: user/discordbot
+    # image: user/discordbot:experimental
+    restart: always
+    tty: true
+    depends_on:
+      - db
+    environment:
+      TOKEN: '<TOKEN>'
+      DB_HOST: 'db'
+      DB_PORT: 3306
+      DB_DATABASE: 'discordbot'
+      DB_USER: 'discordbot'
+      DB_PASSWORD: 'discordbot'
+      SENTRY_DSN: ''
+      OWNER_ID: ''
+
+  db:
+    container_name: mariadb
+    image: mariadb
+    # image: jsurf/rpi-mariadb
+    restart: always
+    environment:
+      MYSQL_USER: 'discordbot'
+      MYSQL_PASSWORD: 'discordbot'
+      MYSQL_DATABASE: 'discordbot'
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+      # MYSQL_INITDB_SKIP_TZINFO: 'yes'
+    volumes:
+      - './mysql_data:/var/lib/mysql'
