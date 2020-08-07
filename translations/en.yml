@@ -1,58 +1,57 @@
-not_allowed: You are not allowed to use this command.
+not_allowed: Du bist nicht dazu berechtigt, diesen Befehl auszuführen.
 
 # ping
 pong: Pong!
 pong_latency: Pong ({:.0f} ms)
 
 # prefix
-invalid_prefix_length: Length of prefix must be between 1 and 16
-prefix_invalid_chars: Prefix contains invalid characters.
-prefix_updated: Prefix has been updated.
-log_prefix_updated: Bot prefix has been changed to `{}`
+invalid_prefix_length: Die Länge des Prefixes muss zwischen 1 und 16 zeichen sein.
+prefix_invalid_chars: Der Prefix enthält falsche zeichen.
+prefix_updated: Der Prefix wurde aktualisiert.
+log_prefix_updated: Der Bot Prefix wurde zu `{}` geändert
 
 # info
-bot_description: Python Discord Bot Template
+bot_description: Bewerbungsbot
 features:
-  - Foo
-  - Bar
+  - Benutzer können sich für verschiedene Jobs bewerben.
 admin_features:
-  - Baz
-features_title: Features
+  - Es können eigene Jobs mit verschiedenen Fragen die voher geklärt werden hinzugefügt werden.
+features_title: Funktionen
 author_title: Author
-contributors_title: Contributors
+contributors_title: Mitwirkende
 github_title: GitHub
 version_title: Version
 prefix_title: Prefix
-help_command_title: Help Command
-bugs_features_title: Bug Reports / Feature Requests
+help_command_title: Hilfe Befehl
+bugs_features_title: Feheler mitteilen / Funktionsanfragen
 bugs_features: >
-  Please [create an issue]({}/issues/new) in the GitHub repository
-  or contact me (<@370876111992913922>) via Discord.
+  Bitte [erstelle ein issue](https://github.com/luwol03/applybot/issues/new) in dem GitHub repository
+  oder kontaktiere mich (<@339062431131369472>) über Discord.
 
 # help
-cog_or_command_not_found: This cog or command does not exist.
-description: Description
-subcommands: Subcommands
-no_category: No category
-help: Help
+cog_or_command_not_found: Dieser Befehl oder die Befehlsgruppe wurde nicht gefunden.
+description: Beschreibung
+subcommands: Unterbefehl
+no_category: Keine Kategorie
+help: Hilfe
 help_usage: |
-  Type `{0}help <command>` for more info on a command.
-  Type `{0}help <cog>` for more info on a cog.
+  Schreibe `{0}help <Befehl>` für mehr Hilfe.
+  Schreibe `{0}help <Befehlsgruppe>` für mehr Hilfe über eine Befehlsgruppe.
 
 # permissions
 permission_levels:
   - Public
   - Moderator
   - Administrator
-no_permissions: No priviliges granted.
-invalid_permission_level: Invalid permission level.
-invalid_permission: Invalid permission.
-permission_set: Permission `{}` has been granted to `>= {}`
-permissions_title: Permissions
-my_permissions_title: My Permissions
+no_permissions: Keine Rechte.
+invalid_permission_level: Rechte Level wurde nicht gefunden-
+invalid_permission: Recht wurde nicht gefunden.
+permission_set: Rechte für `{}` wurde für `>= {} freigeschaltet.`
+permissions_title: Rechte
+my_permissions_title: Meine Rechte
 
 permissions:
-  change_prefix: change bot prefix
-  admininfo: view admininfo
-  view_own_permissions: view own permissions
-  view_all_permissions: view all permissions
+  change_prefix: Ändere den Bot Prefix
+  admininfo: Zeige Admininfo
+  view_own_permissions: Zeige eigene Rechte
+  view_all_permissions: Zeige alle Rechte an
