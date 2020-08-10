@@ -55,3 +55,17 @@ permissions:
   admininfo: Zeige Admininfo
   view_own_permissions: Zeige eigene Rechte
   view_all_permissions: Zeige alle Rechte an
+
+  manage_jobs: Verwalte alle Jobs
+  list_jobs: Zeige alle verfügbaren jobs an
+
+# apply
+ask_job_name: Wie soll der Job heißen?
+ask_job_description: Geben Sie eine Beschreibung für den Job ein.
+ask_question: Gebe eine Frage ein, die für diesen Job gefragt wird. (Um abzubrechen geben Sie .exit ein und um zu speichern geben Sie .save ein)
+no_questions_defined: Es wurden keine Fragen angegeben (abbruch)
+job_exist: Dieser Job existiert schon (abbruch)
+job_saved: Der Job wurde erfolgreich gespeichert
+job_list_title: Alle Jobs
+job_list_description: "Liste:"
+no_jobs: Es wurden keine Jobs gefunden
