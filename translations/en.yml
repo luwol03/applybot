@@ -80,3 +80,7 @@ apply_canceld: Die Bewerbung wurde abgebrochen.
 delete_title: Löschen
 job_not_exists: ":x: Der Job `{}` existiert nicht"
 deleted_successfully: ":white_check_mark: Der Job `{}` wurde erfolgreich gelöscht"
+successfully_set_apply_channel: ":white_check_mark: Der channel für die Bewerbungen wurde erfolgreich auf {} gesetzt."
+apply_channel: Apply Channel
+apply_channel_list: ":white_check_mark: <#{}> ist gerade als apply channel definiert."
+no_apply_chanel_defined: ":x: Es ist kein Apply channel Konfiguriert."
