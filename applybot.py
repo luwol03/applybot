@@ -16,6 +16,7 @@ from discord.ext.commands import Bot, Context, guild_only, CommandError, Command
 from sentry_sdk.integrations.aiohttp import AioHttpIntegration
 from sentry_sdk.integrations.sqlalchemy import SqlalchemyIntegration
 
+from cogs.apply import ApplyCog
 from cogs.permissions import PermissionsCog
 from info import VERSION, GITHUB_LINK, CONTRIBUTORS
 from permissions import Permission
@@ -34,9 +35,7 @@ if sentry_dsn:
 db.create_tables()
 
 
-async def fetch_prefix(_, message: Message) -> Iterable[str]:
-    if message.guild is None:
-        return ""
+async def fetch_prefix(*_) -> Iterable[str]:
     return await get_prefix(), f"<@!{bot.user.id}> ", f"<@{bot.user.id}> "
 
 
@@ -216,5 +215,5 @@ async def on_bot_ping(message: Message):
     await message.channel.send(embed=await build_info_embed(False))
 
 
-register_cogs(bot, PermissionsCog)
+register_cogs(bot, PermissionsCog, ApplyCog)
 bot.run(os.environ["TOKEN"])
