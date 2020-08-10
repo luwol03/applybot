@@ -15,6 +15,7 @@ class Permission(BasePermission):
 
     manage_jobs = auto()
     list_jobs = auto()
+    apply_jobs = auto()
 
     @property
     def default_permission_level(self) -> "BasePermissionLevel":
