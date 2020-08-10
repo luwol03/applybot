@@ -1,3 +1,3 @@
-VERSION = "1.0.0"
+VERSION = "0.1.0"
 CONTRIBUTORS = []
-GITHUB_LINK = "https://github.com/Defelo/PythonDiscordBotTemplate"
+GITHUB_LINK = "https://github.com/luwol03/applybot"
