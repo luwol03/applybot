@@ -77,3 +77,6 @@ apply_congratulations: Schön, das du dich als `{}` bei uns Bewerben möchtest. 
 reply_to_questions: Um dich als `{}` hier zu Bewerben musst du folgenden Fragen antworten. Um abzubrechen gebe einfach `.exit` ein.
 no_dm: ":x: Bewerbung konnte nicht gestartet werden, bitte aktiviere Privat Nachrichten von diesem Server um Dich zu Bewerben."
 apply_canceld: Die Bewerbung wurde abgebrochen.
+delete_title: Löschen
+job_not_exists: ":x: Der Job `{}` existiert nicht"
+deleted_successfully: ":white_check_mark: Der Job `{}` wurde erfolgreich gelöscht"

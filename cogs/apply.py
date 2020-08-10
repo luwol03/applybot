@@ -1,9 +1,7 @@
-from typing import Dict
-
 from PyDrocsid.database import db_thread, db
 from PyDrocsid.translations import translations
 from PyDrocsid.util import read_normal_message, send_long_embed
-from discord import Embed, Forbidden, HTTPException, Member, TextChannel
+from discord import Embed, Forbidden, HTTPException
 from discord.ext import commands
 from discord.ext.commands import Cog, Bot, guild_only, Context, UserInputError
 
@@ -125,3 +123,24 @@ class ApplyCog(Cog, name="apply"):
             await db_thread(Questions.create, job_name, q, i)
 
         await ctx.send(translations.job_saved)
+
+    @job.command(name="delete", aliases=["d", "-"])
+    @Permission.manage_jobs.check
+    @guild_only()
+    async def delete_jobs(self, ctx: Context, job_name: str):
+        """
+        delete an job to apply
+        """
+        embed = Embed(title=translations.delete_title, colour=0xCF0606)
+        job = await db_thread(db.first, Jobs, name=job_name)
+        qus = await db_thread(db.all, Questions, job_name=job_name)
+        if job is None or qus is None:
+            embed.description = translations.f_job_not_exists(job_name)
+            await ctx.send(embed=embed)
+            return
+        await db_thread(db.delete, job)
+        for q in qus:
+            await db_thread(db.delete, q)
+        embed.colour = 0x256BE6
+        embed.description = translations.f_deleted_successfully(job_name)
+        await ctx.send(embed=embed)
