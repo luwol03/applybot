@@ -46,7 +46,7 @@ permission_levels:
 no_permissions: Keine Rechte.
 invalid_permission_level: Rechte Level wurde nicht gefunden-
 invalid_permission: Recht wurde nicht gefunden.
-permission_set: Rechte für `{}` wurde für `>= {} freigeschaltet.`
+permission_set: Rechte für `{}` wurde für `>= {}` freigeschaltet.
 permissions_title: Rechte
 my_permissions_title: Meine Rechte
 
@@ -58,14 +58,22 @@ permissions:
 
   manage_jobs: Verwalte alle Jobs
   list_jobs: Zeige alle verfügbaren jobs an
+  apply_jobs: Bewerbe dich für Jobs
 
 # apply
 ask_job_name: Wie soll der Job heißen?
 ask_job_description: Geben Sie eine Beschreibung für den Job ein.
-ask_question: Gebe eine Frage ein, die für diesen Job gefragt wird. (Um abzubrechen geben Sie .exit ein und um zu speichern geben Sie .save ein)
-no_questions_defined: Es wurden keine Fragen angegeben (abbruch)
-job_exist: Dieser Job existiert schon (abbruch)
+ask_question: Gebe eine Frage ein, die für diesen Job gefragt wird. (Um abzubrechen geben Sie `.exit` ein und um zu speichern geben Sie `.save` ein)
+no_questions_defined: Es wurden keine Fragen angegeben (Abbruch)
+job_exist: Dieser Job existiert schon (Abbruch)
 job_saved: Der Job wurde erfolgreich gespeichert
 job_list_title: Alle Jobs
 job_list_description: "Liste:"
 no_jobs: Es wurden keine Jobs gefunden
+job_not_found: ":x: Der Job `{}` existiert nicht."
+apply: Bewerbung
+apply_title: "Viel Glück bei deiner Bewerbung! :tada:"
+apply_congratulations: Schön, das du dich als `{}` bei uns Bewerben möchtest. Zuvor musst du aber dem bot per Privat Nachricht ein paar Fragen bezüglich deiner Bewerbung beantworten.
+reply_to_questions: Um dich als `{}` hier zu Bewerben musst du folgenden Fragen antworten. Um abzubrechen gebe einfach `.exit` ein.
+no_dm: ":x: Bewerbung konnte nicht gestartet werden, bitte aktiviere Privat Nachrichten von diesem Server um Dich zu Bewerben."
+apply_canceld: Die Bewerbung wurde abgebrochen.

@@ -35,9 +35,7 @@ if sentry_dsn:
 db.create_tables()
 
 
-async def fetch_prefix(_, message: Message) -> Iterable[str]:
-    if message.guild is None:
-        return ""
+async def fetch_prefix(*_) -> Iterable[str]:
     return await get_prefix(), f"<@!{bot.user.id}> ", f"<@{bot.user.id}> "
 
 
