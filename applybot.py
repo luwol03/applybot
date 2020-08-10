@@ -115,7 +115,7 @@ async def change_prefix(ctx: Context, new_prefix: str):
 
 
 async def build_info_embed(authorized: bool) -> Embed:
-    embed = Embed(title="DiscordBot", color=0x007700, description=translations.bot_description)
+    embed = Embed(title="Application Bot", color=0x007700, description=translations.bot_description)
     embed.set_thumbnail(url=bot.user.avatar_url)
     prefix = await get_prefix()
     features = translations.features
