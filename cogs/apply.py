@@ -1,7 +1,8 @@
 from PyDrocsid.database import db_thread, db
+from PyDrocsid.settings import Settings
 from PyDrocsid.translations import translations
 from PyDrocsid.util import read_normal_message, send_long_embed
-from discord import Embed, Forbidden, HTTPException
+from discord import Embed, Forbidden, HTTPException, TextChannel
 from discord.ext import commands
 from discord.ext.commands import Cog, Bot, guild_only, Context, UserInputError
 
@@ -143,4 +144,32 @@ class ApplyCog(Cog, name="apply"):
             await db_thread(db.delete, q)
         embed.colour = 0x256BE6
         embed.description = translations.f_deleted_successfully(job_name)
+        await ctx.send(embed=embed)
+
+    @job.command()
+    @Permission.manage_jobs.check
+    @guild_only()
+    async def set_apply_channel(self, ctx: Context, channel: TextChannel):
+        """
+        set apply text channel
+        """
+        await Settings.set(str, "apply_channel", str(channel.id))
+        embed = Embed(title=translations.apply_channel,
+                      description=translations.f_successfully_set_apply_channel(channel.mention), colour=0x256BE6)
+        await ctx.send(embed=embed)
+
+    @job.command()
+    @Permission.manage_jobs.check
+    @guild_only()
+    async def get_apply_channel(self, ctx: Context):
+        """
+        get apply text channel
+        """
+        embed = Embed(title=translations.apply_channel, colour=0x256BE6)
+        channel = await Settings.get(str, "apply_channel")
+        if channel is not None:
+            embed.description = translations.f_apply_channel_list(channel)
+        else:
+            embed.description = translations.no_apply_chanel_defined
+            embed.colour = 0xCF0606
         await ctx.send(embed=embed)
