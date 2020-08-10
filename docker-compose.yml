@@ -1,9 +1,9 @@
 version: '3.7'
 services:
-  discordbot:
-    container_name: discordbot
-    image: user/discordbot
-    # image: user/discordbot:experimental
+  applybot:
+    container_name: applybot
+    image: luwol03/applybot
+    # image: luwol03/applybot:experimental
     restart: always
     tty: true
     depends_on:
@@ -12,9 +12,9 @@ services:
       TOKEN: '<TOKEN>'
       DB_HOST: 'db'
       DB_PORT: 3306
-      DB_DATABASE: 'discordbot'
-      DB_USER: 'discordbot'
-      DB_PASSWORD: 'discordbot'
+      DB_DATABASE: 'applybot'
+      DB_USER: 'applybot'
+      DB_PASSWORD: 'applybot'
       SENTRY_DSN: ''
       OWNER_ID: ''
 
@@ -24,9 +24,9 @@ services:
     # image: jsurf/rpi-mariadb
     restart: always
     environment:
-      MYSQL_USER: 'discordbot'
-      MYSQL_PASSWORD: 'discordbot'
-      MYSQL_DATABASE: 'discordbot'
+      MYSQL_USER: 'applybot'
+      MYSQL_PASSWORD: 'applybot'
+      MYSQL_DATABASE: 'applybot'
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
       # MYSQL_INITDB_SKIP_TZINFO: 'yes'
     volumes:
