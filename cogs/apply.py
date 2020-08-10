@@ -32,6 +32,10 @@ class ApplyCog(Cog, name="apply"):
         apply for a job
         """
         embed = Embed(title=translations.apply, colour=0xCF0606)
+        if await Settings.get(str, "apply_channel") is None:
+            embed.description = translations.no_apply_chanel_defined + " " + translations.apply_canceld
+            await ctx.send(embed=embed)
+            return
         if await db_thread(db.first, Jobs, name=job_name) is None:
             embed.description = translations.f_job_not_found(job_name)
             await ctx.send(embed=embed)
@@ -51,16 +55,40 @@ class ApplyCog(Cog, name="apply"):
                 embed = Embed(title=translations.apply, description=q.question, colour=0x256BE6)
                 await send_long_embed(ctx.author, embed)
                 r, _ = await read_normal_message(self.bot, ctx.author.dm_channel, ctx.author)
-                if r == ".exit":
+                if r == "exit":
                     embed = Embed(title=translations.apply, description=translations.apply_canceld, colour=0xCF0606)
                     await ctx.author.send(embed=embed)
                     return
-                reply.append({q: str(q.question), r: r})
+                reply.append((str(q.question), r))
         except (Forbidden, HTTPException):
             await ctx.send(translations.no_dm)
             return
 
-        print(reply)
+        embed = Embed(title=translations.apply, colour=0xCF0606)
+        channel = self.bot.get_channel(int(await Settings.get(str, "apply_channel")))
+
+        if channel is None:
+            embed.description = translations.no_apply_chanel_defined + " " + translations.apply_canceld
+            await ctx.author.send(embed=embed)
+            return
+
+        try:
+            apply_embed = Embed(title=translations.apply,
+                                description=translations.f_apply_embed_des(ctx.author.mention),
+                                colour=0x256BE6)
+            apply_embed.set_footer(text=translations.f_requested_by(ctx.author, ctx.author.id),
+                                   icon_url=ctx.author.avatar_url)
+            for q, r in reply:
+                apply_embed.add_field(name=q, value=r, inline=False)
+            await send_long_embed(channel, apply_embed)
+            embed.description = translations.successfully_send
+            embed.colour = 0x256BE6
+            await ctx.author.send(embed=embed)
+        except (HTTPException, Forbidden):
+            embed.description = translations.no_apply_chanel_defined + " " + translations.apply_canceld
+            embed.colour = 0xCF0606
+            await ctx.author.send(embed=embed)
+            return
 
     @job.command(name="list", aliases=["l"])
     @Permission.list_jobs.check
@@ -107,10 +135,10 @@ class ApplyCog(Cog, name="apply"):
         while True:
             await ctx.send(translations.ask_question)
             q, _ = await read_normal_message(self.bot, ctx.channel, ctx.author)
-            if q == ".exit":
+            if q == "exit":
                 questions = []
                 break
-            elif q == ".save":
+            elif q == "save":
                 break
             questions.append(q)
 

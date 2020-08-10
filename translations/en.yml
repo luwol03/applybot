@@ -61,9 +61,10 @@ permissions:
   apply_jobs: Bewerbe dich für Jobs
 
 # apply
+requested_by: Requested by @{} ({})
 ask_job_name: Wie soll der Job heißen?
 ask_job_description: Geben Sie eine Beschreibung für den Job ein.
-ask_question: Gebe eine Frage ein, die für diesen Job gefragt wird. (Um abzubrechen geben Sie `.exit` ein und um zu speichern geben Sie `.save` ein)
+ask_question: Gebe eine Frage ein, die für diesen Job gefragt wird. (Um abzubrechen geben Sie `exit` ein und um zu speichern geben Sie `save` ein)
 no_questions_defined: Es wurden keine Fragen angegeben (Abbruch)
 job_exist: Dieser Job existiert schon (Abbruch)
 job_saved: Der Job wurde erfolgreich gespeichert
@@ -74,7 +75,7 @@ job_not_found: ":x: Der Job `{}` existiert nicht."
 apply: Bewerbung
 apply_title: "Viel Glück bei deiner Bewerbung! :tada:"
 apply_congratulations: Schön, das du dich als `{}` bei uns Bewerben möchtest. Zuvor musst du aber dem bot per Privat Nachricht ein paar Fragen bezüglich deiner Bewerbung beantworten.
-reply_to_questions: Um dich als `{}` hier zu Bewerben musst du folgenden Fragen antworten. Um abzubrechen gebe einfach `.exit` ein.
+reply_to_questions: Um dich als `{}` hier zu Bewerben musst du folgenden Fragen antworten. Um abzubrechen gebe einfach `exit` ein.
 no_dm: ":x: Bewerbung konnte nicht gestartet werden, bitte aktiviere Privat Nachrichten von diesem Server um Dich zu Bewerben."
 apply_canceld: Die Bewerbung wurde abgebrochen.
 delete_title: Löschen
@@ -84,3 +85,5 @@ successfully_set_apply_channel: ":white_check_mark: Der channel für die Bewerbu
 apply_channel: Apply Channel
 apply_channel_list: ":white_check_mark: <#{}> ist gerade als apply channel definiert."
 no_apply_chanel_defined: ":x: Es ist kein Apply channel Konfiguriert."
+successfully_send: ":white_check_mark: Deine Bewerbung wurde erfolgreich versendent. :tada: Bitte warte, bis sich das Team bei Dir meldet."
+apply_embed_des: "{} hat sich beworben und wartet nun auf eine Antwort."
