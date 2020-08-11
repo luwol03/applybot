@@ -184,7 +184,7 @@ async def version(ctx: Context):
     show version
     """
 
-    await ctx.send(f"DiscordBot v{VERSION}")
+    await ctx.send(f"Application Bot v{VERSION}")
 
 
 @bot.event
