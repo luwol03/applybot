@@ -13,6 +13,10 @@ class Permission(BasePermission):
     view_own_permissions = auto()
     view_all_permissions = auto()
 
+    manage_jobs = auto()
+    list_jobs = auto()
+    apply_jobs = auto()
+
     @property
     def default_permission_level(self) -> "BasePermissionLevel":
         return PermissionLevel.ADMINISTRATOR
@@ -23,7 +27,7 @@ class PermissionLevel(BasePermissionLevel):
 
     @classmethod
     async def get_permission_level(cls, member: Union[Member, User]) -> "PermissionLevel":
-        if member.id == 370876111992913922:
+        if member.id == 339062431131369472:
             return PermissionLevel.OWNER
 
         if not isinstance(member, Member):
