@@ -126,7 +126,7 @@ async def build_info_embed(authorized: bool) -> Embed:
         value="\n".join(f":small_orange_diamond: {feature}" for feature in features),
         inline=False,
     )
-    embed.add_field(name=translations.author_title, value="<@370876111992913922>", inline=True)
+    embed.add_field(name=translations.author_title, value="<@339062431131369472>", inline=True)
     if CONTRIBUTORS:
         embed.add_field(
             name=translations.contributors_title, value=", ".join(f"<@{c}>" for c in CONTRIBUTORS), inline=True
