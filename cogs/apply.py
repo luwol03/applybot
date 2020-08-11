@@ -24,7 +24,7 @@ class ApplyCog(Cog, name="apply"):
         if ctx.invoked_subcommand is None:
             raise UserInputError
 
-    @job.command(name="apply", aliases=["a"])
+    @commands.command(name="apply", aliases=["a"])
     @Permission.apply_jobs.check
     @guild_only()
     async def apply_job(self, ctx: Context, job_name: str):
