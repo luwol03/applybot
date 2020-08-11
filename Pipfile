@@ -10,6 +10,8 @@ python_version = "3.8"
 pydrocsid = "*"
 sentry-sdk = "*"
 "discord.py" = {git = "https://github.com/Rapptz/discord.py.git"}
+sqlalchemy = "*"
+pymysql = "*"
 
 [dev-packages]
 flake8 = "*"
