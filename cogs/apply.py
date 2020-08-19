@@ -31,6 +31,7 @@ class ApplyCog(Cog, name="apply"):
         """
         apply for a job
         """
+        job_name = job_name.lower()
         embed = Embed(title=translations.apply, colour=0xCF0606)
         if await Settings.get(str, "apply_channel") is None:
             embed.description = translations.no_apply_chanel_defined + " " + translations.apply_canceld
@@ -128,6 +129,7 @@ class ApplyCog(Cog, name="apply"):
 
         await ctx.send(translations.ask_job_name)
         job_name, _ = await read_normal_message(self.bot, ctx.channel, ctx.author)
+        job_name = job_name.lower()
 
         if await db_thread(db.first, Jobs, name=job_name) is not None:
             await ctx.send(translations.job_exist)
@@ -165,6 +167,7 @@ class ApplyCog(Cog, name="apply"):
         """
         delete an job to apply
         """
+        job_name = job_name.lower()
         embed = Embed(title=translations.delete_title, colour=0xCF0606)
         job = await db_thread(db.first, Jobs, name=job_name)
         qus = await db_thread(db.all, Questions, job_name=job_name)
