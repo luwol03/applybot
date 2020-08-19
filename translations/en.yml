@@ -4,6 +4,15 @@ not_allowed: Du bist nicht dazu berechtigt, diesen Befehl auszuführen.
 pong: Pong!
 pong_latency: Pong ({:.0f} ms)
 
+# status
+online_status: Online Status
+logged_in: ":green_circle:"
+heartbeat: ":heartbeat:"
+
+# error
+error: Error
+error_string: ":x: {}"
+
 # prefix
 invalid_prefix_length: Die Länge des Prefixes muss zwischen 1 und 16 zeichen sein.
 prefix_invalid_chars: Der Prefix enthält falsche zeichen.
