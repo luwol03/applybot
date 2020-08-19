@@ -4,6 +4,15 @@ not_allowed: Du bist nicht dazu berechtigt, diesen Befehl auszuführen.
 pong: Pong!
 pong_latency: Pong ({:.0f} ms)
 
+# status
+online_status: Online Status
+logged_in: ":green_circle:"
+heartbeat: ":heartbeat:"
+
+# error
+error: Error
+error_string: ":x: {}"
+
 # prefix
 invalid_prefix_length: Die Länge des Prefixes muss zwischen 1 und 16 zeichen sein.
 prefix_invalid_chars: Der Prefix enthält falsche zeichen.
@@ -87,3 +96,7 @@ apply_channel_list: ":white_check_mark: <#{}> ist gerade als apply channel defin
 no_apply_chanel_defined: ":x: Es ist kein Apply channel Konfiguriert."
 successfully_send: ":white_check_mark: Deine Bewerbung wurde erfolgreich versendent. :tada: Bitte warte, bis sich das Team bei Dir meldet."
 apply_embed_des: "{} hat sich beworben und wartet nun auf eine Antwort."
+apply_role: Apply Role
+apply_role_list: ":white_check_mark: <@&{}> ist gerade als apply role definiert."
+no_apply_role_defined: ":x: Es ist keine Apply role Konfiguriert."
+successfully_set_apply_role: ":white_check_mark: Die Rolle für Bewerber wurde erfolgreich auf <@&{}> gesetzt."
