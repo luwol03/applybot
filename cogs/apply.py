@@ -2,7 +2,7 @@ from PyDrocsid.database import db_thread, db
 from PyDrocsid.settings import Settings
 from PyDrocsid.translations import translations
 from PyDrocsid.util import read_normal_message, send_long_embed
-from discord import Embed, Forbidden, HTTPException, TextChannel
+from discord import Embed, Forbidden, HTTPException, TextChannel, Role
 from discord.ext import commands
 from discord.ext.commands import Cog, Bot, guild_only, Context, UserInputError
 
@@ -84,6 +84,11 @@ class ApplyCog(Cog, name="apply"):
             embed.description = translations.successfully_send
             embed.colour = 0x256BE6
             await ctx.author.send(embed=embed)
+            if (role := ctx.guild.get_role(await Settings.get(int, "apply_role"))) is not None:
+                try:
+                    await ctx.author.add_roles(role)
+                except Forbidden:
+                    pass
         except (HTTPException, Forbidden):
             embed.description = translations.no_apply_chanel_defined + " " + translations.apply_canceld
             embed.colour = 0xCF0606
@@ -199,5 +204,33 @@ class ApplyCog(Cog, name="apply"):
             embed.description = translations.f_apply_channel_list(channel)
         else:
             embed.description = translations.no_apply_chanel_defined
+            embed.colour = 0xCF0606
+        await ctx.send(embed=embed)
+
+    @job.command()
+    @Permission.manage_jobs.check
+    @guild_only()
+    async def set_apply_role(self, ctx: Context, role: Role):
+        """
+        set apply role
+        """
+        await Settings.set(int, "apply_role", role.id)
+        embed = Embed(title=translations.apply_role,
+                      description=translations.f_successfully_set_apply_role(role.id), colour=0x256BE6)
+        await ctx.send(embed=embed)
+
+    @job.command()
+    @Permission.manage_jobs.check
+    @guild_only()
+    async def get_apply_role(self, ctx: Context):
+        """
+        get apply role
+        """
+        embed = Embed(title=translations.apply_role, colour=0x256BE6)
+        role = await Settings.get(int, "apply_role")
+        if role is not None:
+            embed.description = translations.f_apply_role_list(role)
+        else:
+            embed.description = translations.no_apply_role_defined
             embed.colour = 0xCF0606
         await ctx.send(embed=embed)
