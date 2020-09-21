@@ -9,7 +9,7 @@ from PyDrocsid.database import db
 from PyDrocsid.events import listener, register_cogs
 from PyDrocsid.help import send_help
 from PyDrocsid.translations import translations
-from PyDrocsid.util import measure_latency, send_long_embed
+from PyDrocsid.util import measure_latency, send_long_embed, send_editable_log
 from discord import Message, User, Forbidden, AllowedMentions, Embed
 from discord.ext import tasks
 from discord.ext.commands import Bot, Context, guild_only, CommandError, CommandNotFound, UserInputError
@@ -20,7 +20,7 @@ from cogs.apply import ApplyCog
 from cogs.permissions import PermissionsCog
 from info import VERSION, GITHUB_LINK, CONTRIBUTORS
 from permissions import Permission
-from util import get_prefix, set_prefix, make_error, send_editable_log
+from util import get_prefix, set_prefix, make_error
 
 sentry_dsn = os.environ.get("SENTRY_DSN")
 if sentry_dsn:

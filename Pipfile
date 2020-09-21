@@ -9,7 +9,7 @@ python_version = "3.8"
 [packages]
 pydrocsid = "*"
 sentry-sdk = "*"
-"discord.py" = {git = "https://github.com/Rapptz/discord.py.git"}
+discord.py = "*"
 sqlalchemy = "*"
 pymysql = "*"
 
