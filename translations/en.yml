@@ -5,9 +5,10 @@ pong: Pong!
 pong_latency: Pong ({:.0f} ms)
 
 # status
-online_status: Online Status
-logged_in: ":green_circle:"
-heartbeat: ":heartbeat:"
+online_status: ":vertical_traffic_light: Online Status"
+status_description: ":label: **ApplyBot v{}**"
+logged_in: ":robot: Logged in"
+heartbeat: ":heartbeat: Heartbeat"
 
 # error
 error: Error

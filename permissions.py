@@ -1,3 +1,4 @@
+from contextvars import ContextVar
 from enum import auto
 from typing import Union
 
@@ -5,6 +6,8 @@ from PyDrocsid.permission import BasePermission, BasePermissionLevel
 from PyDrocsid.translations import translations
 from discord import Member, User
 from discord.ext.commands import Converter, Context, BadArgument
+
+sudo_active = ContextVar("sudo_active")
 
 
 class Permission(BasePermission):

@@ -42,12 +42,14 @@ class ApplyCog(Cog, name="apply"):
             await ctx.send(embed=embed)
             return
         embed.colour = 0x256BE6
-        embed.add_field(name=translations.apply_title, value=translations.f_apply_congratulations(job_name),
-                        inline=False)
+        embed.add_field(
+            name=translations.apply_title, value=translations.f_apply_congratulations(job_name), inline=False
+        )
         await send_long_embed(ctx, embed)
         pv_embed = Embed(title=translations.apply, colour=0x256BE6)
-        pv_embed.add_field(name=translations.apply_title, value=translations.f_reply_to_questions(job_name),
-                           inline=False)
+        pv_embed.add_field(
+            name=translations.apply_title, value=translations.f_reply_to_questions(job_name), inline=False
+        )
         reply = []
 
         try:
@@ -74,11 +76,14 @@ class ApplyCog(Cog, name="apply"):
             return
 
         try:
-            apply_embed = Embed(title=translations.apply,
-                                description=translations.f_apply_embed_des(ctx.author.mention),
-                                colour=0x256BE6)
-            apply_embed.set_footer(text=translations.f_requested_by(ctx.author, ctx.author.id),
-                                   icon_url=ctx.author.avatar_url)
+            apply_embed = Embed(
+                title=translations.apply,
+                description=translations.f_apply_embed_des(ctx.author.mention),
+                colour=0x256BE6,
+            )
+            apply_embed.set_footer(
+                text=translations.f_requested_by(ctx.author, ctx.author.id), icon_url=ctx.author.avatar_url
+            )
             for q, r in reply:
                 apply_embed.add_field(name=q, value=r, inline=False)
             await send_long_embed(channel, apply_embed)
@@ -190,8 +195,11 @@ class ApplyCog(Cog, name="apply"):
         set apply text channel
         """
         await Settings.set(str, "apply_channel", str(channel.id))
-        embed = Embed(title=translations.apply_channel,
-                      description=translations.f_successfully_set_apply_channel(channel.mention), colour=0x256BE6)
+        embed = Embed(
+            title=translations.apply_channel,
+            description=translations.f_successfully_set_apply_channel(channel.mention),
+            colour=0x256BE6,
+        )
         await ctx.send(embed=embed)
 
     @job.command()
@@ -218,8 +226,11 @@ class ApplyCog(Cog, name="apply"):
         set apply role
         """
         await Settings.set(int, "apply_role", role.id)
-        embed = Embed(title=translations.apply_role,
-                      description=translations.f_successfully_set_apply_role(role.id), colour=0x256BE6)
+        embed = Embed(
+            title=translations.apply_role,
+            description=translations.f_successfully_set_apply_role(role.id),
+            colour=0x256BE6,
+        )
         await ctx.send(embed=embed)
 
     @job.command()
