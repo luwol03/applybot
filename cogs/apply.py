@@ -150,7 +150,7 @@ class ApplyCog(Cog, name="apply"):
             if q == "exit":
                 questions = []
                 break
-            elif q == "save":
+            if q == "save":
                 break
             questions.append(q)
 
